@@ -31,7 +31,7 @@ INSTALLED_APPS = [
 
     'base',
     'chatapp',
-    'storages',
+    
 ]
 
 MIDDLEWARE = [
