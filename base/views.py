@@ -4,6 +4,7 @@ from agora_token_builder import RtcTokenBuilder
 import random
 import time
 import json
+import os
 
 from .models import RoomMember
 
@@ -33,7 +34,7 @@ def getToken(request):
 @csrf_exempt
 def createMember(request):
     data = json.loads(request.body)
-    member, created = RoomMember.objects.get_or_create(
+    member, create = RoomMember.objects.get_or_create(
         name = data['name'],
         uid = data['UID'],
         room_name = data['room_name']
