@@ -16,6 +16,7 @@ let joinAndDisplayLocalStream = async()=>{
     // Listening to user-published EVENT prior to joining the channel
     client.on('user-published', handleUserJoined)
     client.on('user-published', handleUserLeft)
+    
     // #1 Join channel
     try{
         await client.join(APP_ID, CHANNEL, TOKEN, UID)
