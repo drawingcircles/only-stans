@@ -42,7 +42,7 @@ def createMember(request):
     return JsonResponse({'name':data['name']}, safe=False)
 
 
-@csrf_exempt
+
 def getMember(request):
     uid = request.GET.get('UID')
     room_name = request.GET.get('room_name')
