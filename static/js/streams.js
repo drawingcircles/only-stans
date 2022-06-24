@@ -111,7 +111,7 @@ let toggleMic = async (e) => {
     }
 }
 
-let createMember = async () => {
+let createMember = async (user) => {
     let response = await fetch('/create_member/', {
         method:'POST',
         headers:{
@@ -139,8 +139,6 @@ let deleteMember = async () => {
     })
     let member = await response.json()
 }
-
-
 
 joinAndDisplayLocalStream()
 
