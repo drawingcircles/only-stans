@@ -29,7 +29,7 @@ let joinAndDisplayLocalStream = async()=>{
     // #2 Get Tracks
     // --THE MIC TRACK WILL BE localTracks[0]; THE CAMERA TRACK WILL BE localTtracks[1]-- //
     localTracks = await AgoraRTC.createMicrophoneAndCameraTracks()
-    let member = await createMember()
+    let member = createMember()
     // #3 Create player
     let player = `<div class="video-container" id="user-container-${UID}">
                     <div class="username-wrapper"><span id="user-name">${member.name}</span></div>
@@ -125,6 +125,11 @@ let createMember = async () => {
     return member
 }
 
+
+
+
+
+
 let getMember = async (user) => {
     let response = await fetch(`/get_member/?UID=${user.uid}&room_name=${CHANNEL}`)
     let member = await response.json()
@@ -142,9 +147,11 @@ let deleteMember = async () => {
     let member = await response.json()
 }
 
-await joinAndDisplayLocalStream()
+
 
 window.addEventListener('beforeunload', deleteMember)
+
+joinAndDisplayLocalStream()
 
 document.getElementById('leave-btn').addEventListener('click', leaveAndRemoveLocalStream)
 document.getElementById('camera-btn').addEventListener('click', toggleCamera)
