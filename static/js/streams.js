@@ -142,7 +142,7 @@ let deleteMember = async () => {
     let member = await response.json()
 }
 
-joinAndDisplayLocalStream()
+await joinAndDisplayLocalStream()
 
 window.addEventListener('beforeunload', deleteMember)
 
